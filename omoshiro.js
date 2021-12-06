@@ -1,4 +1,4 @@
-
+// 形容詞の配列
 const adjective = [
     "ashidamanano",
     "yasaizyuusugahaitta",
@@ -26,46 +26,71 @@ const adjective = [
     "hinohikarigakowai",
     "sumaburadaisuki",
     "rouninnseininattezyusshunenn",
-    ];
-const fff = [
+    "bakadekai",
+    "toudaishusekino"
+];
+// 名詞の配列
+const noun = [
     "kutu",
     "sannkousho",
+    "hanazawasann",
+    "iniesuta",
+    "kamaitachi",
+    "rinnzinn",
+    "hurudokei",
+    "dennkousekka",
+    "pinngeininn",
+    "guritogura",
+    "nikumann",
+    "konnbodayamada",
+    "supaida-otoko",
+    "zennnousinnzeusu",
+    "karateka",
+    "touhuya",
+    "itigennbutti",
+    "sinniriyunikurotenninn"
 ]
 
+const hakkou = document.getElementById("hakkou");
 
-document.getElementById("hakkou").addEventListener('click', () => {
-
-// 形容詞の長さの配列を取得
+// 出力するが押された時
+hakkou.addEventListener('click', () => {
+    // 形容詞の長さの配列を取得
     let number1 = Array.from({length: adjective.length}, (_, i) => i+1)
-//シャッフル後の配列（選択肢をシャッフルさせる）
+    //シャッフル後の配列（選択肢をシャッフルさせる）
     const newNumber1 = [];
-//シャッフルの記述
+    //シャッフルの記述
     while (number1.length > 0) {
         let n = number1.length;
         let k = Math.floor(Math.random() * n);
         newNumber1.push(number1[k]-1);
         number1.splice(k, 1);
-    }
-// console.log(newNumber1);
-    // console.log(adjective[newNumber1[0]]);
-
-// 形容詞の長さの配列を取得
-    let number2 = Array.from({length: fff.length}, (_, i) => i+1)
-//シャッフル後の配列（選択肢をシャッフルさせる）
+    };
+    // 名詞の長さの配列を取得
+    let number2 = Array.from({length: noun.length}, (_, i) => i+1)
+    //シャッフル後の配列（選択肢をシャッフルさせる）
     const newNumber2 = [];
-//シャッフルの記述
+    //シャッフルの記述
     while (number2.length > 0) {
         let m = number2.length;
         let l = Math.floor(Math.random() * m);
         newNumber2.push(number2[l]-1);
         number2.splice(l, 1);
-    }
-// console.log(newNumber2);
-    // console.log(fff[newNumber2[0]]);
+    };
+    const answerBox = document.getElementById('answerBox');
+    const pass = document.getElementById('pass');
+    // パスワードを設定
+    password = adjective[newNumber1[0]] + noun[newNumber2[0]];
+    // 一つ前の操作で出力したパスワードを削除
+    pass.remove();
+    // パスワードを挿入
+    answerBox.insertAdjacentHTML('afterbegin', `<div id ="pass">${password}</div>`);
+});
 
-
-console.log(adjective[newNumber1[0]] + fff[newNumber2[0]]  )
-
-
-
+// ホバーした時
+hakkou.addEventListener('mouseover', () => {
+    hakkou.classList.add('pointerEvent');
+});
+hakkou.addEventListener('mouseleave', () => {
+    hakkou.classList.remove('pointerEvent');
 });

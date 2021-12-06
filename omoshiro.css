@@ -1,3 +1,22 @@
-.button{
+.hakkou{
     background-color: dodgerblue;
+    width: 300px;
+    font-size: 70px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    border-radius:20px ;
+}
+.answerBox{
+    
+    background-color: rgb(77, 77, 77);
+    width: 300px;
+    font-size: 10px;
+    text-align: center;
+    margin: 10px auto;
+    border-radius:20px ;
+}
+.pointerEvent{
+    opacity:0.5;
+    cursor: pointer;
 }
