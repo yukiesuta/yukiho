@@ -6,6 +6,6 @@ services:
     #build: ./php-fpm
     build: ./php
     ports:
-    - 8080:8000
+    - 8083:8000
     volumes:
     - ./work:/work

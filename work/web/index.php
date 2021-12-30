@@ -7,8 +7,9 @@ require('../app/_parts/_header.php');
 ?>
 
 <form action="result.php" method="get">
-  <input type="text" name="message">
-  <input type="text" name="username">
+  <!-- <input type="text" name="message">
+  <input type="text" name="username"> -->
+  <textarea name="message" id="" cols="30" rows="10"></textarea>
   <button>Send</button>
 </form>
 
