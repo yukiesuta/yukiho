@@ -14,4 +14,4 @@ COPY php.ini-development /usr/local/etc/php/php.ini
 
 WORKDIR /work
 
-CMD ["php", "-S", "0.0.0.0:8000", "-t", "/work/web"]
+CMD ["php", "-S", "0.0.0.0:8001", "-t", "/work/web"]
